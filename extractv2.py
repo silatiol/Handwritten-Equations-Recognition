@@ -1,4 +1,4 @@
-import cv2
+import cv2 
 import context as con
 import pandas as pd  # Data processing, CSV file I/O
 import numpy as np  # Linear Algebra
@@ -273,7 +273,7 @@ def output(inputs, pred):
     cv2.imshow("output", out)
 
 
-path = "./img/2011/test/55.png"
+path = "./img/2011/test/319.png"
 image2 = cv2.imread(path)
 image2 = cv2.bitwise_not(image2)
 image = cv2.cvtColor(image2, cv2.COLOR_BGR2GRAY)
@@ -284,7 +284,7 @@ expression = []
 
 finals = np.array(extract_patterns(path))
 
-model = tf.keras.models.load_model("model\CNN_19.model")
+model = tf.keras.models.load_model("C:\\Users\\snake\\Downloads\\CNN_19.model")
 predictions = Classify(model, finals, ReadIndexChar("model\IndexChar.txt"))
 
 expression, topCut, bottomCut = getExpression(expression, predictions)
